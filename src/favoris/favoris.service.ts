@@ -10,8 +10,8 @@ export class FavorisService {
     @InjectRepository(Favoris) private readonly favoris: Repository<Favoris>,
   ) {}
 
-  createFavoris(CreateFavorisDto: CreateFavorisDto) {
-    const favoris = this.favoris.create(CreateFavorisDto);
+  createFavoris(createFavorisDto: CreateFavorisDto) {
+    const favoris = this.favoris.create(createFavorisDto);
     return this.favoris.save(favoris);
   }
 

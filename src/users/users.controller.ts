@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  HttpCode,
   Param,
   ParseIntPipe,
   Post,
@@ -22,6 +23,7 @@ export class UsersController {
   }
 
   @Post('login')
+  @HttpCode(200)
   loginUsers(@Body() users: any) {
     return this.usersService.loginUsers(users.email, users.password);
   }

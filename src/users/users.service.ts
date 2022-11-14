@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Users } from 'src/entities/users.entety';
 import { Repository } from 'typeorm';
@@ -11,8 +11,8 @@ export class UsersService {
     @InjectRepository(Users) private readonly users: Repository<Users>,
   ) {}
 
-  async createUsers(CreateUserDto: CreateUsersDto) {
-    const users = this.users.create(CreateUserDto);
+  async createUsers(createUserDto: CreateUsersDto) {
+    const users = this.users.create(createUserDto);
     users.password = await bcrypt.hash(users.password, 10);
     return this.users.save(users);
   }
@@ -24,7 +24,10 @@ export class UsersService {
     });
     if (await bcrypt.compare(password, users.password))
       return 'users connected';
-    else return 'erreur password or email';
+    else
+      throw new BadRequestException('erreur email or password', {
+        cause: new Error(),
+      });
   }
 
   findByFavorisId(id: number) {
