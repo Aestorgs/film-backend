@@ -23,7 +23,6 @@ export class FavorisController {
 
   @Delete(':showsId')
   getDeleteFavoris(@Param('showsId', ParseIntPipe) showsId: number) {
-    console.log(showsId);
     return this.favorisService.deleteFavoris(showsId);
   }
 }
