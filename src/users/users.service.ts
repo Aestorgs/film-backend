@@ -23,7 +23,7 @@ export class UsersService {
       where: { email },
     });
     if (await bcrypt.compare(password, users.password))
-      return 'users connected';
+      return { users: users.id };
     else
       throw new BadRequestException('erreur email or password', {
         cause: new Error(),

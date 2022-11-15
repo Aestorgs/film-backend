@@ -15,7 +15,10 @@ export class FavorisService {
     return this.favoris.save(favoris);
   }
 
-  deleteFavoris(id: number) {
-    return this.favoris.delete(id);
+  async deleteFavoris(showsId: number) {
+    const favoris = await this.favoris.find({
+      where: { showsId },
+    });
+    return this.favoris.remove(favoris);
   }
 }

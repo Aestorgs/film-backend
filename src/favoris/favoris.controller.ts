@@ -21,8 +21,9 @@ export class FavorisController {
     return this.favorisService.createFavoris(createFavorisDto);
   }
 
-  @Delete(':id')
-  getDeleteFavoris(@Param('id', ParseIntPipe) id: number) {
-    return this.favorisService.deleteFavoris(id);
+  @Delete(':showsId')
+  getDeleteFavoris(@Param('showsId', ParseIntPipe) showsId: number) {
+    console.log(showsId);
+    return this.favorisService.deleteFavoris(showsId);
   }
 }
