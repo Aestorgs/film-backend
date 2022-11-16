@@ -16,7 +16,6 @@ export class FavorisService {
   }
 
   async deleteFavoris(id: number) {
-    console.log(id);
     return this.favoris.delete(id);
   }
 }
