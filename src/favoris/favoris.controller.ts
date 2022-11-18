@@ -8,7 +8,7 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { CreateFavorisDto } from './dto/favoris.dto';
+import { Favoris } from 'src/entities/favoris.entity';
 import { FavorisService } from './favoris.service';
 
 @Controller('favoris')
@@ -17,8 +17,8 @@ export class FavorisController {
 
   @Post('shows')
   @UsePipes(ValidationPipe)
-  postFavoris(@Body() createFavorisDto: CreateFavorisDto) {
-    return this.favorisService.createFavoris(createFavorisDto);
+  async postFavoris(@Body() body: Partial<Favoris>) {
+    return this.favorisService.createFavoris(body);
   }
 
   @Delete(':id')

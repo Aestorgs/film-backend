@@ -32,7 +32,7 @@ export class UsersService {
 
   findByFavorisId(id: number) {
     return this.users.findOne({
-      relations: { favoris: true },
+      relations: { favoris: { shows: true } },
       where: { id },
     });
   }

@@ -3,6 +3,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { FavorisModule } from './favoris/favoris.module';
+import { SaisonModule } from './saison/saison.module';
+import { EpisodeModule } from './episode/episode.module';
+import { ShowModule } from './show/show.module';
 import entities from './entities';
 
 @Module({
@@ -24,6 +27,9 @@ import entities from './entities';
     }),
     UsersModule,
     FavorisModule,
+    SaisonModule,
+    EpisodeModule,
+    ShowModule,
   ],
   controllers: [],
   providers: [],

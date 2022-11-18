@@ -19,5 +19,5 @@ export class Users {
   password: string;
 
   @OneToMany(() => Favoris, (favoris) => favoris.users)
-  favoris: Favoris;
+  favoris: Favoris[];
 }
