@@ -13,7 +13,6 @@ export class FavorisService {
   ) {}
 
   async createFavoris(body: Partial<Favoris>): Promise<Favoris> {
-    console.log(body);
     const show = new Show({ showsId: Number(body.shows) });
     const showErreur = await validate(show);
     if (showErreur.length) throw showErreur;

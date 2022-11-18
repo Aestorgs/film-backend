@@ -11,6 +11,9 @@ import { Show } from './show.entity';
 
 @Entity('saison')
 export class Saison {
+  constructor(params?: Partial<Saison>) {
+    Object.assign(this, params);
+  }
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -22,7 +25,7 @@ export class Saison {
 
   @ManyToOne(() => Show, (shows) => shows.showsId)
   @JoinColumn({ name: 'showsId' })
-  showsId: Show;
+  shows: Show;
 
   @OneToMany(() => Episode, (episode) => episode.episode)
   episode: Episode;
