@@ -1,6 +1,9 @@
 import {
   Body,
   Controller,
+  Get,
+  Param,
+  ParseIntPipe,
   Post,
   UsePipes,
   ValidationPipe,
@@ -16,5 +19,10 @@ export class SaisonController {
   @UsePipes(ValidationPipe)
   async postSaison(@Body() body: Partial<Saison>) {
     return this.saisonService.createSaison(body);
+  }
+
+  @Get('saisons/:id')
+  getSaison(@Param('id', ParseIntPipe) id: number) {
+    return this.saisonService.findBySaisonId(id);
   }
 }
