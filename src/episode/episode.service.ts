@@ -14,4 +14,11 @@ export class EpisodeService {
     const episode = this.episode.create(createEpisodeDto);
     return this.episode.save(episode);
   }
+
+  findByEpisodeId(id: number) {
+    return this.episode.findOne({
+      relations: { saison: true },
+      where: { id },
+    });
+  }
 }
