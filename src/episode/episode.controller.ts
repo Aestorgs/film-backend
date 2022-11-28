@@ -1,6 +1,9 @@
 import {
   Body,
   Controller,
+  Get,
+  Param,
+  ParseIntPipe,
   Post,
   UsePipes,
   ValidationPipe,
@@ -16,5 +19,10 @@ export class EpisodeController {
   @UsePipes(ValidationPipe)
   postUsers(@Body() createEpisodeDto: CreateEpisodeDto) {
     return this.episodeService.createEpisode(createEpisodeDto);
+  }
+
+  @Get(':id')
+  getSaison(@Param('id', ParseIntPipe) id: number) {
+    return this.episodeService.findByEpisodeId(id);
   }
 }
