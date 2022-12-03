@@ -26,11 +26,4 @@ export class SaisonService {
     if (saiErreur.length) throw saiErreur;
     return await this.saison.save(saison);
   }
-
-  findBySaisonId(id: number) {
-    return this.saison.findOne({
-      relations: { shows: true },
-      where: { id },
-    });
-  }
 }
