@@ -9,6 +9,8 @@ import {
 import { Episode } from './episode.entity';
 import { Show } from './show.entity';
 
+//je crée la table et crée les colonnes 
+
 @Entity('saison')
 export class Saison {
   constructor(params?: Partial<Saison>) {
