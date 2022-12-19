@@ -12,6 +12,7 @@ export class FavorisService {
     @InjectRepository(Show) private readonly shows: Repository<Show>,
   ) {}
 
+  // j'envoie les données favoris
   async createFavoris(body: Partial<Favoris>): Promise<Favoris> {
     const show = new Show({ showsId: Number(body.shows) });
     const showErreur = await validate(show);
@@ -26,6 +27,7 @@ export class FavorisService {
     return await this.favoris.save(favoris);
   }
 
+  // je suprime en favoris id 
   async deleteFavoris(id: number) {
     return this.favoris.delete(id);
   }
