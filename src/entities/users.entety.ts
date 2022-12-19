@@ -1,6 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Favoris } from './favoris.entity';
 
+//je crée la table et crée les colonnes 
 @Entity('users')
 export class Users {
   @PrimaryGeneratedColumn()
