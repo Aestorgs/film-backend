@@ -12,6 +12,7 @@ import { EpisodeService } from './episode.service';
 export class EpisodeController {
   constructor(private readonly episodeService: EpisodeService) {}
 
+  // je crée post pour j'envoie les donnée Episode
   @Post('saison')
   @UsePipes(ValidationPipe)
   postUsers(@Body() createEpisodeDto: CreateEpisodeDto) {
