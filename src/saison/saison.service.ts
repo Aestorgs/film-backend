@@ -12,6 +12,7 @@ export class SaisonService {
     @InjectRepository(Show) private readonly show: Repository<Show>,
   ) {}
 
+  //j'envoie les données saison 
   async createSaison(body: Partial<Saison>): Promise<Saison> {
     const show = new Show({ showsId: Number(body.shows) });
     const showErreur = await validate(show);
