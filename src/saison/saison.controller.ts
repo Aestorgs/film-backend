@@ -12,6 +12,7 @@ import { SaisonService } from './saison.service';
 export class SaisonController {
   constructor(private readonly saisonService: SaisonService) {}
 
+  // je crée une route pour envoyer les donnée saison
   @Post('shows')
   @UsePipes(ValidationPipe)
   async postSaison(@Body() body: Partial<Saison>) {
