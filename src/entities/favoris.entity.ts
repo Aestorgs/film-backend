@@ -2,6 +2,7 @@ import { Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Show } from './show.entity';
 import { Users } from './users.entety';
 
+//je crée la table et crée les colonnes 
 @Entity('favoris')
 export class Favoris {
   constructor(params?: Partial<Favoris>) {
