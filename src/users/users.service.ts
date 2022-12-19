@@ -11,12 +11,14 @@ export class UsersService {
     @InjectRepository(Users) private readonly users: Repository<Users>,
   ) {}
 
+  // envoyer les donnée register 
   async createUsers(createUserDto: CreateUsersDto) {
     const users = this.users.create(createUserDto);
     users.password = await bcrypt.hash(users.password, 10);
     return this.users.save(users);
   }
-
+  
+  // pour se connecter login 
   async loginUsers(email: string, password: string) {
     const users = await this.users.findOne({
       select: ['id', 'password'],
@@ -30,6 +32,7 @@ export class UsersService {
       });
   }
 
+  // afficher utilisateur avec id et c'est favoris 
   findByFavorisId(id: number) {
     return this.users.findOne({
       relations: { favoris: { shows: true } },
