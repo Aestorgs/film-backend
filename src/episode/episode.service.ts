@@ -10,6 +10,7 @@ export class EpisodeService {
     @InjectRepository(Episode) private readonly episode: Repository<Episode>,
   ) {}
 
+  // j'envoie les donnée Episode
   async createEpisode(createEpisodeDto: CreateEpisodeDto) {
     const episode = this.episode.create(createEpisodeDto);
     return this.episode.save(episode);
