@@ -21,10 +21,22 @@
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  
+  [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Contexte: but du projet : Crée un film-backend
+
+Fonctionnalités attendues : ajouter utilisateur , enregister un utilisateur,  ajouter au favoris , de suprimer au favoris , afficher les saison , afficher les episode , afficher les series , ajouter une saison , ajouter un episode
+
+Durée : 2 semaine ,
+
+Taches réalisées : Aestorgs ,
+
+Technos utilisées : Typescript , Docker , Postgres
+
+Outils et ressources : TypeOrm , Nestjs
 
 ## Installation
 
